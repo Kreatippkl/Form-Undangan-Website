@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data Calon Pengantin - Kreatip.pkl</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+    <div class="container my-4 my-md-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-4">
+                    <img src="img/logo-kreatip.png" alt="Logo Kreatip.pkl" class="brand-logo" onerror="this.src='https://via.placeholder.com/180x50?text=Kreatip.pkl'">
+                    <h4 class="fw-bold mt-3 mb-1 text-dark">Formulir Data Undangan Website</h4>
+                    <p class="text-muted small">Lengkapi informasi di bawah ini untuk proses pembuatan website undangan</p>
+                </div>
+
+                <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
+                    <div class="card-header bg-white border-0 pt-4 pb-2">
+                        <div class="step-indicator-wrapper px-2 px-md-4">
+                            <div class="step-progress-track">
+                                <div class="step-progress-bar" id="progressBar"></div>
+                            </div>
+                            <div class="steps-container d-flex justify-content-between">
+                                <div class="step active" data-step="1"><span>1</span></div>
+                                <div class="step" data-step="2"><span>2</span></div>
+                                <div class="step" data-step="3"><span>3</span></div>
+                                <div class="step" data-step="4"><span>4</span></div>
+                                <div class="step" data-step="5"><span>5</span></div>
+                                <div class="step" data-step="6"><span>6</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body p-4 p-md-5">
+                        <form id="weddingForm" novalidate>
+                            
+                            <!-- STEP 1 -->
+                            <div class="form-step" id="step-1">
+                                <h5 class="fw-bold mb-3 text-primary"><i class="bi bi-person-heart me-2"></i>Step 1: Data Mempelai Wanita</h5>
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Urutan Nama di Undangan</label>
+                                    <select class="form-select" id="urutan_nama">
+                                        <option value="Wanita & Pria" selected>Mempelai Wanita & Pria</option>
+                                        <option value="Pria & Wanita">Mempelai Pria & Wanita</option>
+                                    </select>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Nama Panggilan</label>
+                                        <input type="text" class="form-control" id="panggilan_wanita" placeholder="Contoh: Rina" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Nama Lengkap & Gelar</label>
+                                        <input type="text" class="form-control" id="lengkap_wanita" placeholder="Contoh: Rina Kartika, S.Kom" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label small text-muted">Urutan Anak</label>
+                                        <input type="text" class="form-control" id="putri_ke" placeholder="Contoh: Putri Pertama">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label small text-muted">Nama Ayah</label>
+                                        <input type="text" class="form-control" id="ayah_wanita" placeholder="Bapak ...">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label small text-muted">Nama Ibu</label>
+                                        <input type="text" class="form-control" id="ibu_wanita" placeholder="Ibu ...">
+                                    </div>
+                                </div>
+                                <div class="mt-4 d-flex justify-content-end">
+                                    <button type="button" class="btn btn-primary px-4 next-btn">Lanjutkan <i class="bi bi-arrow-right ms-1"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- STEP 2 -->
+                            <div class="form-step d-none" id="step-2">
+                                <h5 class="fw-bold mb-3 text-primary"><i class="bi bi-person-heart me-2"></i>Step 2: Data Mempelai Pria</h5>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Nama Panggilan</label>
+                                        <input type="text" class="form-control" id="panggilan_pria" placeholder="Contoh: Dimas" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Nama Lengkap & Gelar</label>
+                                        <input type="text" class="form-control" id="lengkap_pria" placeholder="Contoh: Dimas Setiawan, S.T" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label small text-muted">Urutan Anak</label>
+                                        <input type="text" class="form-control" id="putra_ke" placeholder="Contoh: Putra Kedua">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label small text-muted">Nama Ayah</label>
+                                        <input type="text" class="form-control" id="ayah_pria" placeholder="Bapak ...">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label small text-muted">Nama Ibu</label>
+                                        <input type="text" class="form-control" id="ibu_pria" placeholder="Ibu ...">
+                                    </div>
+                                </div>
+                                <div class="mt-4 d-flex justify-content-between">
+                                    <button type="button" class="btn btn-outline-secondary px-4 prev-btn"><i class="bi bi-arrow-left me-1"></i> Kembali</button>
+                                    <button type="button" class="btn btn-primary px-4 next-btn">Lanjutkan <i class="bi bi-arrow-right ms-1"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- STEP 3 -->
+                            <div class="form-step d-none" id="step-3">
+                                <h5 class="fw-bold mb-3 text-primary"><i class="bi bi-calendar-heart me-2"></i>Step 3: Akad / Pemberkatan</h5>
+                                <div class="mb-3">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="acara1" id="akad" value="Akad Nikah" checked>
+                                        <label class="form-check-label" for="akad">Akad Nikah</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="acara1" id="pemberkatan" value="Pemberkatan">
+                                        <label class="form-check-label" for="pemberkatan">Pemberkatan</label>
+                                    </div>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Tanggal Acara</label>
+                                        <input type="date" class="form-control" id="tgl_akad">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Waktu / Pukul</label>
+                                        <input type="text" class="form-control" id="jam_akad" placeholder="08:00 - 10:00 WIB">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small text-muted">Tempat / Gedung / Kediaman</label>
+                                        <input type="text" class="form-control" id="tempat_akad" placeholder="Contoh: Masjid Agung / Kediaman Mempelai Wanita">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small text-muted">Alamat Lengkap</label>
+                                        <textarea class="form-control" id="alamat_akad" rows="2" placeholder="Nama Jalan, No. Rumah, RT/RW, Kelurahan, Kecamatan"></textarea>
+                                    </div>
+                                </div>
+                                <div class="mt-4 d-flex justify-content-between">
+                                    <button type="button" class="btn btn-outline-secondary px-4 prev-btn"><i class="bi bi-arrow-left me-1"></i> Kembali</button>
+                                    <button type="button" class="btn btn-primary px-4 next-btn">Lanjutkan <i class="bi bi-arrow-right ms-1"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- STEP 4 -->
+                            <div class="form-step d-none" id="step-4">
+                                <h5 class="fw-bold mb-3 text-primary"><i class="bi bi-balloon-heart me-2"></i>Step 4: Resepsi / Acara Utama</h5>
+                                <div class="mb-3">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="acara2" id="resepsi" value="Resepsi" checked>
+                                        <label class="form-check-label" for="resepsi">Resepsi</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="acara2" id="ramah" value="Ramah Tamah">
+                                        <label class="form-check-label" for="ramah">Ramah Tamah</label>
+                                    </div>
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Tanggal Acara</label>
+                                        <input type="date" class="form-control" id="tgl_resepsi">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Waktu / Pukul</label>
+                                        <input type="text" class="form-control" id="jam_resepsi" placeholder="11:00 - Selesai">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small text-muted">Tempat Acara</label>
+                                        <input type="text" class="form-control" id="tempat_resepsi" placeholder="Contoh: Ballroom Hotel / Gedung Serbaguna">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small text-muted">Alamat Lengkap</label>
+                                        <textarea class="form-control" id="alamat_resepsi" rows="2" placeholder="Nama Jalan, Kelurahan, Kecamatan, Kota/Kabupaten"></textarea>
+                                    </div>
+                                    
+                                </div>
+                                <div class="mt-4 d-flex justify-content-between">
+                                    <button type="button" class="btn btn-outline-secondary px-4 prev-btn"><i class="bi bi-arrow-left me-1"></i> Kembali</button>
+                                    <button type="button" class="btn btn-primary px-4 next-btn">Lanjutkan <i class="bi bi-arrow-right ms-1"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- STEP 5 -->
+                            <div class="form-step d-none" id="step-5">
+                                <h5 class="fw-bold mb-3 text-primary"><i class="bi bi-gift me-2"></i>Step 5: Wedding Gift & Story</h5>
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <label class="form-label small text-muted">Rekening Digital Gift (Bank/E-Wallet & No. Rekening a/n)</label>
+                                        <textarea class="form-control" id="rekening" rows="2" placeholder="Contoh: BCA 1234567890 a.n Dimas&#10;DANA 08123456789 a.n Rina"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small text-muted">Alamat Pengiriman Kado Fisik</label>
+                                        <textarea class="form-control" id="alamat_kado" rows="2" placeholder="Alamat pengiriman kado fisik (jika ada)"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small text-muted">Love Story (Opsional)</label>
+                                        <textarea class="form-control" id="love_story" rows="3" placeholder="Cerita singkat perjalanan cinta mempelai"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small text-muted">Tautan Google Maps</label>
+                                        <input type="url" class="form-control" id="maps_resepsi" placeholder="https://maps.app.goo.gl/...">
+                                    </div>
+                                </div>
+                                <div class="mt-4 d-flex justify-content-between">
+                                    <button type="button" class="btn btn-outline-secondary px-4 prev-btn"><i class="bi bi-arrow-left me-1"></i> Kembali</button>
+                                    <button type="button" class="btn btn-primary px-4 next-btn">Lanjutkan <i class="bi bi-arrow-right ms-1"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- STEP 6 -->
+                            <div class="form-step d-none" id="step-6">
+                                <h5 class="fw-bold mb-3 text-primary"><i class="bi bi-music-note-beamed me-2"></i>Step 6: Request Musik & Tema</h5>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Request Musik / Backsound</label>
+                                        <input type="text" class="form-control" id="music" placeholder="Judul Lagu - Penyanyi">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Nomor WhatsApp Pengirim</label>
+                                        <input type="tel" class="form-control" id="wa_client" placeholder="08xxxxxxxxxx">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Nama Tema Pilihan</label>
+                                        <input type="text" class="form-control" id="tema_pilihan" placeholder="Contoh: Rustic Gold / Elegant Emerald">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-muted">Nuansa / Tema Agama</label>
+                                        <input type="text" class="form-control" id="tema_agama" placeholder="Contoh: Islam / Kristen / Umum">
+                                    </div>
+                                </div>
+                                <div class="mt-4 d-flex justify-content-between">
+                                    <button type="button" class="btn btn-outline-secondary px-4 prev-btn"><i class="bi bi-arrow-left me-1"></i> Kembali</button>
+                                    <button type="button" id="submitWA" class="btn btn-success px-4"><i class="bi bi-whatsapp me-2"></i>Kirim ke WhatsApp</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="index.html" class="text-decoration-none text-muted small"><i class="bi bi-arrow-left me-1"></i> Kembali ke Katalog Undangan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal fade" id="modalWelcome" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow rounded-4 text-center p-3">
+                <div class="modal-body p-4">
+                    <i class="bi bi-exclamation-circle text-primary display-4"></i>
+                    <h5 class="fw-bold mt-3">Perhatian</h5>
+                    <p class="text-muted small">Dimohon untuk memperhatikan penulisan huruf kapital, tanda baca, dan gelar saat mengisi data calon pengantin. Data yang dikirim akan langsung kami proses via copy-paste.</p>
+                    <button class="btn btn-primary w-100 rounded-pill py-2" id="btnOkWelcome">Mengerti & Lanjutkan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalInstruction" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow rounded-4 overflow-hidden">
+                <div class="modal-header bg-primary text-white border-0 py-3">
+                    <h5 class="modal-title fs-6 fw-bold"><i class="bi bi-info-circle me-2"></i>PETUNJUK PENGIRIMAN</h5>
+                </div>
+                <div class="modal-body p-4">
+                    <ol class="small text-muted ps-3 mb-4">
+                        <li class="mb-2">Kirim Foto maks. 12 foto ke WhatsApp kami dalam bentuk dokumen file agar kualitas foto tidak pecah.</li>
+                        <li class="mb-2">Jika formulir/kolom tertentu tidak ingin diisi, cukup ketik tanda strip ( <strong>-</strong> ).</li>
+                        <li class="mb-2">Klik tombol <strong>"Kirim ke WhatsApp"</strong> di halaman akhir untuk menghubungkan ke customer service.</li>
+                        <li>Pastikan seluruh teks pesan terkirim lengkap di jendela chat.</li>
+                    </ol>
+                    <button class="btn btn-success w-100 rounded-pill py-2" data-bs-dismiss="modal">Mulai Mengisi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

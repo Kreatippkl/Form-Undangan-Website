@@ -1,0 +1,99 @@
+:root {
+    --primary-color: #0d6efd;
+    --success-color: #198754;
+    --primary-hover: #0b5ed7;
+    --step-inactive: #e9ecef;
+    --text-muted: #6c757d;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+.brand-logo {
+    max-height: 48px;
+    object-fit: contain;
+}
+
+/* Step Indicator styling */
+.step-indicator-wrapper {
+    position: relative;
+    margin: 10px 0 25px 0;
+}
+
+.step-progress-track {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    right: 15px;
+    height: 4px;
+    background-color: var(--step-inactive);
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.step-progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease-in-out;
+}
+
+.steps-container {
+    position: relative;
+    z-index: 2;
+}
+
+.step {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px solid var(--step-inactive);
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.step.active {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.15);
+}
+
+.step.completed {
+    border-color: var(--success-color);
+    background-color: var(--success-color);
+    color: #ffffff;
+}
+
+/* Form transition & fields */
+.form-step {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+
+.modal-content {
+    border-radius: 1rem;
+}
