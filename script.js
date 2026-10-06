@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     // 1. Konfigurasi Nomor Admin Tujuan
-    const ADMIN_PHONE = "6285602531776";
+    const ADMIN_PHONE = "6289518347756";
 
     // 2. Alur Modal Pembuka
     const modalWelcomeEl = document.getElementById("modalWelcome");
